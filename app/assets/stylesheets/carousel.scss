@@ -1,0 +1,24 @@
+.content {
+    padding: 20px;
+    margin: auto;
+    width: 90%;
+}
+
+h3 {
+	font-size: 36px;
+    margin: 10px;
+    padding: 2%;
+    position: relative;
+    background: #00558B;
+    color: #fff;
+    line-height: 100px;
+    text-align: center;
+}
+
+.header-group {
+
+}
+
+.slick-next::before, .slick-prev::before {
+	color: #00558B;
+}

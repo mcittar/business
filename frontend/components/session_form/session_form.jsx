@@ -18,9 +18,7 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
@@ -52,32 +50,20 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={ this.handleSubmit }  className="login-form-box">
-          Welcome to BenchBnB!
-          <br/>
+        <div>
+          Welcome to WineSite TM!
           Please { this.props.formType } or { this.navLink() }
           { this.renderErrors() }
-          <div className="login-form">
-            <br/>
-            <label>Username:
-              <input type="text"
-                value={ this.state.email }
-                onChange={ this.update('email') }
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={ this.state.password }
-                onChange={ this.update('password') }
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
+        </div>
+
+        <div className="login-form">
+          <label>Email:</label>
+          <input className="login-input" value={ this.state.email } onChange={ this.update('email') }/>
+          
+          <label>Password:</label>
+          <input className="login-input" type="password" value={ this.state.password } onChange={ this.update('password') }/>
+          <button onClick={ this.handleSubmit }>Submit</button>
+        </div>
       </div>
     );
   }
