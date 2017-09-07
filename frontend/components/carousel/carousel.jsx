@@ -6,7 +6,20 @@ class Carousel extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.getWines();
+  }
+
   render() {
+    let { wines } = this.props;
+    let Outwines = <div><h3>Check out our Wines</h3></div>;
+    let keys = Object.keys(wines);
+    if (keys.length > 0) {
+      Outwines = keys.map(key => {
+        return <div key={ key }><h3>{ wines[key].name }</h3></div>;
+      });
+    }
+
     var settings = {
       dots: true,
       infinite: true,
@@ -16,19 +29,15 @@ class Carousel extends React.Component {
       accessibility: true,
       dragable: true,
       focusOnSelect: true,
-      className: "carousel-div",
       centerMode: true
     };
 
     return (
-      <Slider {...settings}>
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
-      </Slider>
+      <div className='content'>
+        <Slider {...settings}>
+          { Outwines }
+        </Slider>
+      </div>
     );
   }
 }

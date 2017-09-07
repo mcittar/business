@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create({ email: "mcittar", password: "password" })
+
+clyde = Wine.create({ name: "Clyde Van Dusen" })
+hot_pocket = Wine.create({ name: "Hot Pockets" })
+tongue = Wine.create({ name: "Tongue Kiss" })
+prometheus = Wine.create({ name: "Prometheus" })
+f_lips = Wine.create({ name: "Frog Lips"})
